@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.contrib.gis.utils import LayerMapping
-from protected_areas.models import ProtectedArea
+from protected_areas.models import ProtectedAreaBrasil
 
 
 class Command(BaseCommand):
@@ -31,7 +31,7 @@ class Command(BaseCommand):
 
         shapefile_path = options['shapefile_path'][0]
 
-        lm = LayerMapping(ProtectedArea, shapefile_path, protected_areas_mapping,
+        lm = LayerMapping(ProtectedAreaBrasil, shapefile_path, protected_areas_mapping,
                           transform=True, encoding='iso-8859-1')
 
         lm.save(strict=True, verbose=True)
