@@ -2,7 +2,7 @@ from django.contrib.gis.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-class BaseProtecdArea(models.Model):
+class BaseProtectedArea(models.Model):
     name = models.CharField(_('name'), max_length=254)
 
     category = models.CharField(max_length=254, null=True, blank=True)
@@ -13,7 +13,7 @@ class BaseProtecdArea(models.Model):
     objects = models.GeoManager()
 
 
-class ProtectedAreaBrasil(BaseProtecdArea):
+class ProtectedAreaBrasil(BaseProtectedArea):
     # Brazilian protected areas, from Ministério do Meio Ambiente (Minstry of Enviroment)
     id_uc = models.CharField(max_length=254, null=True, blank=True)
     id_wcmc2 = models.CharField(max_length=254, null=True, blank=True)
@@ -26,4 +26,3 @@ class ProtectedAreaBrasil(BaseProtecdArea):
     dt_ultim10 = models.CharField(max_length=254, null=True, blank=True)
     codigo_u11 = models.CharField(max_length=254, null=True, blank=True)
     org_name = models.CharField(max_length=254, null=True, blank=True)
-
