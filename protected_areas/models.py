@@ -8,6 +8,7 @@ class BaseProtectedArea(models.Model):
     category = models.CharField(max_length=254, null=True, blank=True)
     creation_year = models.CharField(max_length=254, null=True, blank=True)
     country = models.CharField(max_length=254, null=True, blank=True)
+    type = models.CharField(max_length=254, null=True, blank=True)
 
     geometry = models.MultiPolygonField(srid=4326)
     objects = models.GeoManager()
@@ -18,7 +19,6 @@ class ProtectedAreaBrasil(BaseProtectedArea):
     id_uc = models.CharField(max_length=254, null=True, blank=True)
     id_wcmc2 = models.CharField(max_length=254, null=True, blank=True)
 
-    group = models.CharField(max_length=254, null=True, blank=True)
     esfera5 = models.CharField(max_length=254, null=True, blank=True)
     gid7 = models.CharField(max_length=254, null=True, blank=True)
     precision = models.CharField(max_length=254, null=True, blank=True)
