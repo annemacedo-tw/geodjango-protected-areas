@@ -1,3 +1,4 @@
+from django.db.models import Manager as GeoManager
 from django.contrib.gis.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -11,7 +12,7 @@ class BaseProtectedArea(models.Model):
     type = models.CharField(max_length=254, null=True, blank=True)
 
     geometry = models.MultiPolygonField(srid=4326)
-    objects = models.GeoManager()
+    objects = GeoManager()
 
 
 class ProtectedAreaBrasil(BaseProtectedArea):
