@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+from django.db.models import CASCADE
 import django.contrib.gis.db.models.fields
 
 
@@ -25,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProtectedAreaBrasil',
             fields=[
-                ('baseprotectedarea_ptr', models.OneToOneField(serialize=False, to='protected_areas.BaseProtectedArea', parent_link=True, primary_key=True, auto_created=True)),
+                ('baseprotectedarea_ptr', models.OneToOneField(serialize=False, to='protected_areas.BaseProtectedArea', parent_link=True, primary_key=True, auto_created=True, on_delete=CASCADE)),
                 ('id_uc', models.CharField(blank=True, null=True, max_length=254)),
                 ('id_wcmc2', models.CharField(blank=True, null=True, max_length=254)),
                 ('group', models.CharField(blank=True, null=True, max_length=254)),
